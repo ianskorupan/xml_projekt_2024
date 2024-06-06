@@ -4,7 +4,7 @@ $id = $_GET['id'];
 
 $forsale = new DomDocument;
 $forsale->validateOnParse = true;
-$forsale->Load('podatci/forsale.xml');
+$forsale->Load('data/forsale.xml');
 $item = new DOMXPath($forsale);
 
 foreach ($item->query("//item[@id=$id]/artist") as $x)
@@ -24,7 +24,7 @@ foreach ($item->query("//item[@id=$id]/comment") as $x)
 foreach ($item->query("//item[@id=$id]/seller") as $x)
     $seller = $x->textContent;
 
-$users = json_decode(file_get_contents('podatci/users.json'), true);
+$users = json_decode(file_get_contents('data/users.json'), true);
 foreach ($users["users"] as $user) {
     if ($user["name"] == $seller) {
         $result = $user;
