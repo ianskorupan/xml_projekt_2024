@@ -62,12 +62,6 @@ $users = json_decode(file_get_contents('data/users.json'), true);
             <a href=index.php title="choo.ns homepage">
                 <h1 id="title" class="display-5">choo.ns</h1>
             </a>
-
-            <div id="profile_controls" class="vertcent">
-                <a href=sell.php>
-                    <button class="btn sellbtn">Sell</button>
-                </a>
-            </div>
         </div>
 
         <div id="content">
