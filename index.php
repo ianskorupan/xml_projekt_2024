@@ -1,7 +1,7 @@
 <?php
 
-$forsale = simplexml_load_file('podatci/forsale.xml');
-$users = json_decode(file_get_contents('podatci/users.json'), true);
+$forsale = simplexml_load_file('data/forsale.xml');
+$users = json_decode(file_get_contents('data/users.json'), true);
 
 ?>
 
