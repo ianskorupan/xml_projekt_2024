@@ -82,31 +82,19 @@ $users = json_decode(file_get_contents('podatci/users.json'), true);
                         <th>price</th>
                     </tr>
 
-                    <?php foreach ($forsale->item as $item): ?>
-                        <tr onclick="location.href='info.php?id=<?php echo $item->attributes()->{'id'}?>'">
-                            <td><?php echo $item->attributes()->{'id'}; ?></td>
-                            <td><?php echo $item->artist; ?></td>
-                            <td><?php echo $item->release; ?></td>
-                            <td><?php echo $item->medium; ?></td>
-                            <td><?php echo $item->catno; ?></td>
-                            <td><?php echo $item->price; ?></td>
-                            <td><?php echo $item->img; ?></td>
-                        </tr>
-                    <?php endforeach; ?>
-
                     <?php
-
-                        echo "<tr onclick=\"location.href='info.php?id=" . $item->attributes()->{'id'} . "'\">";
-                        echo "<a href=opis.php?id=" . $row['id'] . ">";
-                        echo "<td><image src='" . $row['img'] . "' width=100/></td>";
-                        echo "<td>" . $row['artist'] . "</td>";
-                        echo "<td>" . $row['relname'] . "</td>";
-                        echo "<td>" . $row['media'] . "</td>";
-                        echo "<td>" . $row['cat'] . "</td>";
-                        echo "<td>" . $row['price'] . "€</td>";
-                        echo "</a>";
-                        echo "</tr>";
-
+                        foreach ($forsale->item as $item) {
+                            echo "<tr onclick=\"location.href='info.php?id=" . $item->attributes()->{'id'} . "'\">";
+                            echo "<a href=opis.php?id=" . $item->attributes()->{'id'} . ">";
+                            echo "<td><image src='" . $item->img . "' width=100/></td>";
+                            echo "<td>" . $item->artist . "</td>";
+                            echo "<td>" . $item->release . "</td>";
+                            echo "<td>" . $item->medium . "</td>";
+                            echo "<td>" . $item->catno . "</td>";
+                            echo "<td>" . $item->price . "€</td>";
+                            echo "</a>";
+                            echo "</tr>";
+                        }
                     ?>
                     <tr>
                     </tr>
